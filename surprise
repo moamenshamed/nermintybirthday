@@ -1,0 +1,51 @@
+
+      font-size: 60px;
+      color: #000000;
+      margin-top: 50px;
+    }
+    @keyframes beat {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <h1>Countdown to My Favorite One's Birthday</h1>
+  <div id="countdown">0 days left for my favorite one's birthday
+    <span class="heart">lolyy ♥️♥️♥️
+
+  </span></div>
+  <div id="loly"  >  i love you so much and want to spend all my whole life with you <br>
+    you mean everything for me bgd <br> 
+ </div>
+<div id="lolly" > <b> </b><img src="loly.jpg" alt="The Closest To My Heart" width="600" height="400">
+ </b> <img src="WhatsApp Image 2023-10-28 at 10.23.51_0c1ac126.jpg" alt="dog" width="600" height="400"></div>
+  <script>
+    // Set the date of your favorite one's birthday
+   // var birthday = new Date(); // Current date
+    //birthday.setDate(birthday.getDate() + 34); // Add 34 days to the current date
+
+    // Update the countdown every second
+   // var countdown = setInterval(function() {
+      var now = new Date().getTime(); // Current time
+      var distance = birthday - now; // Time remaining in milliseconds
+
+      // Calculate the days, hours, minutes, and seconds
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      // Display the countdown
+      document.getElementById("countdown").innerHTML = days + " days, " + hours + " hours, " + minutes + " minutes, " + seconds + " seconds";
+
+      // If the countdown is finished, display a message
+      if (distance < 0) {
+        clearInterval(countdown);
+        document.getElementById("countdown").innerHTML = "It's your favorite one's birthday!";
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
